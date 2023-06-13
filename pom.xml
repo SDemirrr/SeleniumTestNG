@@ -32,7 +32,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-http-jdk-client</artifactId>
-            <version>4.5.0</version>
+            <version>4.8.1</version>
             <!--***webdriver'i kullanabilmek icin yukledik***-->
         </dependency>
 
@@ -68,7 +68,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>RELEASE</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
 

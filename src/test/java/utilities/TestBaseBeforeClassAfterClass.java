@@ -1,10 +1,10 @@
 package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -24,6 +24,7 @@ public class TestBaseBeforeClassAfterClass {
         DateTimeFormatter formatter=DateTimeFormatter.ofPattern("YYMMddHHmmss");
         tarih=date.format(formatter);
     }
+
     @AfterClass
     public static void tearDown(){
         driver.quit();
