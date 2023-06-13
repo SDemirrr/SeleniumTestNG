@@ -7,26 +7,23 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
 
 public class TestBaseBeforeClassAfterClass {
 
-    protected static WebDriver driver;
-    protected static String tarih;
+    protected WebDriver driver;
+
     @BeforeClass
-    public static void setUp() {
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        LocalDateTime date=LocalDateTime.now();
-        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("YYMMddHHmmss");
-        tarih=date.format(formatter);
+
     }
 
     @AfterClass
-    public static void tearDown(){
+    public  void tearDown(){
         driver.quit();
     }
 }
