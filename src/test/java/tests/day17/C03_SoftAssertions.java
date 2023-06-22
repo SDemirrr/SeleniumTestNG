@@ -50,5 +50,6 @@ public class C03_SoftAssertions extends TestBaseBeforeMethodAfterMethod {
         System.out.println("Hata olsa bile burasi calisir");
        softAssert.assertAll();
         System.out.println("Hata varsa burasi calismaz");
+
     }
 }
