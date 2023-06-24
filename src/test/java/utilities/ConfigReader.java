@@ -21,7 +21,7 @@ public class ConfigReader {
         /*
         test method'undan yolladigimiz String key degerini alip
         Properties class'indan getProperty(); method'unu kullanarak
-        bu key'e ait value'yi bze getirir.
+        bu key'e ait value'yi bize getirir.
          */
         return properties.getProperty(key);
     }
