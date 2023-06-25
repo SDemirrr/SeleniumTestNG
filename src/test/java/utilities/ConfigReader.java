@@ -24,6 +24,9 @@ public class ConfigReader {
         bu key'e ait value'yi bize getirir.
          */
         return properties.getProperty(key);
+
     }
+
+
 
 }

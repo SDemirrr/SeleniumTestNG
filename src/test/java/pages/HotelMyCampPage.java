@@ -32,5 +32,21 @@ public class HotelMyCampPage {
     @FindBy(xpath = "//*[@*='username username-hide-on-mobile']")
     public WebElement girisYapildi;
 
+    @FindBy(xpath = "//*[text()='Try again please']")
+    public WebElement girisYapilamadi;
+
+    @FindBy(xpath = "//*[@*='menuHotels']")
+    public WebElement hotelMenagement;
+
+    @FindBy(xpath = "//*[text()='Add Room Reservation ']")
+    public WebElement addRooomResarvation;
+
+    @FindBy(xpath = "(//*[@href='/admin/RoomReservationAdmin'])[1]")
+    public WebElement roomResarvation;
+
+    @FindBy(xpath = "(//*[@*='IDUser'])[1]")
+    public WebElement idUser;
+    @FindBy(xpath = "(//*[@*='IsPaid'])[1]")
+    public WebElement isPaid;
 
 }
