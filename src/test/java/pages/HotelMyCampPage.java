@@ -48,5 +48,9 @@ public class HotelMyCampPage {
     public WebElement idUser;
     @FindBy(xpath = "(//*[@*='IsPaid'])[1]")
     public WebElement isPaid;
+ @FindBy(xpath = "//*[text()='RoomReservation was inserted successfully']")
+ public WebElement roomReservationText;
 
+ @FindBy(xpath = "//*[@*='btn btn-primary']")
+ public WebElement okButton;
 }

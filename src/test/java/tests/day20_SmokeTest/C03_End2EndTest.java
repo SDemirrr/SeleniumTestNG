@@ -1,8 +1,10 @@
 package tests.day20_SmokeTest;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HotelMyCampPage;
 import utilities.ConfigReader;
@@ -27,7 +29,7 @@ public class C03_End2EndTest {
      */
 
     @Test
-    public void E2ETest(){
+    public void E2ETest() throws InterruptedException {
         //3. https://www.hotelmycamp.com adresine git.
         Driver.getDriver().get(ConfigReader.getProperty("hotelMyCampUrl"));
         HotelMyCampPage hotelMyCampPage=new HotelMyCampPage();
@@ -54,28 +56,31 @@ public class C03_End2EndTest {
         hotelMyCampPage.addRooomResarvation.click();
 
         //7. Açılan sayfadaki tüm metin kutularına istediğiniz verileri girin.
-       hotelMyCampPage.idUser.sendKeys("manager");
-       actions.sendKeys(Keys.TAB).sendKeys("gamze")
-               .sendKeys(Keys.TAB).sendKeys("semihhh")
-               .sendKeys(Keys.TAB).sendKeys("06/29/2023")
-               .sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("06/30/2023")
-               .sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("ayi")
-               .sendKeys(Keys.TAB).sendKeys("elma")
-               .sendKeys(Keys.TAB).sendKeys("elma")
-               .sendKeys(Keys.TAB).sendKeys("555 555 5555")
-               .sendKeys(Keys.TAB).sendKeys("elma@gmail.com")
-               .sendKeys(Keys.TAB).sendKeys("ayva")
-               .sendKeys(Keys.TAB).sendKeys(Keys.TAB)
-               .sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
-       Driver.getDriver().switchTo().alert().accept();
-
-
-
-
-
         //8. Save butonuna tıklayın.
+        Faker faker=new Faker();
+       hotelMyCampPage.idUser.sendKeys("manager");
+       actions.sendKeys(Keys.TAB).sendKeys("Happy Hotel")
+               .sendKeys(Keys.TAB).sendKeys("15000")
+               .sendKeys(Keys.TAB).sendKeys("06/28/2023")
+               .sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("06/29/2023")
+               .sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("2")
+               .sendKeys(Keys.TAB).sendKeys("2")
+               .sendKeys(Keys.TAB).sendKeys(faker.name().fullName())
+               .sendKeys(Keys.TAB).sendKeys(faker.phoneNumber().cellPhone())
+               .sendKeys(Keys.TAB).sendKeys(faker.internet().emailAddress())
+               .sendKeys(Keys.TAB).sendKeys("ahfkfaddfl")
+               .sendKeys(Keys.TAB).sendKeys(Keys.SPACE)
+               .sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
+
+
         //9. “RoomReservation was inserted successfully” textinin göründüğünü test edin.
+        Thread.sleep(3000);
+        Assert.assertTrue(hotelMyCampPage.roomReservationText.isDisplayed());
+
         //10. OK butonuna tıklayın.
+        hotelMyCampPage.okButton.click();
+        Driver.closeDriver();
+
 
     }
 }
