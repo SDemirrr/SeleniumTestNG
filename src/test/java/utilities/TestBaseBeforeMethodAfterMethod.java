@@ -14,7 +14,7 @@ public class TestBaseBeforeMethodAfterMethod {
 
     protected WebDriver driver;
     protected String tarih;
-    @BeforeMethod
+    @BeforeMethod(groups = "grup1")
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
@@ -24,7 +24,7 @@ public class TestBaseBeforeMethodAfterMethod {
         DateTimeFormatter formatter=DateTimeFormatter.ofPattern("YYMMddHHmmss");
         tarih=date.format(formatter);
     }
-    @AfterMethod
+    @AfterMethod(groups = "grup1")
     public void tearDown() {
         // driver.quit();
     }

@@ -21,7 +21,7 @@ public class C03_ConfigReader {
 
      */
 
-    @Test
+    @Test(groups = "grup2")
     public void positiveLoginTest(){
         //1 ) Bir Class olustur : PositiveTest
         //2) Bir test method olustur positiveLoginTest()

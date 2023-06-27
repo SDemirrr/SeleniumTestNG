@@ -13,7 +13,7 @@ public class TestBaseBeforeClassAfterClass {
 
     protected WebDriver driver;
 
-    @BeforeClass
+    @BeforeClass(groups = "grup1")
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
@@ -22,7 +22,7 @@ public class TestBaseBeforeClassAfterClass {
 
     }
 
-    @AfterClass
+    @AfterClass(groups = "grup1")
     public  void tearDown(){
         // driver.quit();
     }

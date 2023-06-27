@@ -17,7 +17,7 @@ public class C02_HardAssert extends TestBaseBeforeMethodAfterMethod {
     6-arama sonucunun Nutella icerdigini test edin
      */
 
-    @Test
+    @Test(groups = "grup1")
     public void test1() {
         //1-amazon ana sayfasina gidin
         driver.get("https://amazon.com");
