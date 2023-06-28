@@ -12,6 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class C03_WindowHandlesReusableMethod {
+    /*
+    ● https://the-internet.herokuapp.com/windows adresine gidin.
+    ● Click Here butonuna basın.
+     acilan yeni tab'in title'inin "New Window" oldugunu test edin
+     */
+
+
 
     @Test
     public void test01() {
@@ -22,12 +29,14 @@ public class C03_WindowHandlesReusableMethod {
         Driver.getDriver().findElement(By.xpath("//*[text()='Click Here']")).click();
 
         // acilan yeni tab'in title'inin "New Window" oldugunu test edin
-        ArrayList<String> pencereler=new ArrayList<>(Driver.getDriver().getWindowHandles());
-        Driver.getDriver().switchTo().window(pencereler.get(1));
+        ArrayList<String> windowList=new ArrayList<>(Driver.getDriver().getWindowHandles());
+        Driver.getDriver().switchTo().window(windowList.get(1));
         String expectedTitle="New Window";
         String actualTitle=Driver.getDriver().getTitle();
         Assert.assertEquals(actualTitle,expectedTitle);
-        Driver.closeDriver();
+        Driver.quitDriver();
+
+
 
     }
 
@@ -44,7 +53,8 @@ public class C03_WindowHandlesReusableMethod {
         String expectedTitle="New Window";
         String actualTitle=Driver.getDriver().getTitle();
         Assert.assertEquals(actualTitle,expectedTitle);
-        Driver.closeDriver();
+        Driver.quitDriver();
+
 
 
     }

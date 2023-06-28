@@ -1,0 +1,17 @@
+  /*
+        =>Framework'ler buyudukce yeni class'lar yeni test method'lari yeni webelement'ler
+        olusturdukca icinden cikilmaz, tekrar bakimi yapilamaz, guncellemsi cok zor
+        hatta imkansiz bir hal alir
+        =>Uzmanlar reusable(yeniden kullanilabilir), rahat manipule edilebilir bir framework icin
+        bir design pattern(pom vs) olarak Pom(page object model)'de karar vemisler
+        =>Olmazsa olmazlar
+        ***1=Driver class
+        ***2=Page class
+        ***3Test class
+        ***Utilities class
+
+        =>Aradigimiz bir webelement'i ya da bir method'u kolaylikla bulabilmek ve guncelleyebilmek icin
+        Java'dan ogrenmis oldugumuz oop concept selenium ile page object modelde birlestirilmis oluyor.
+
+        PageObjectModel ozetle OOP konsepti selenium ile iliskilendirmektir.
+         */

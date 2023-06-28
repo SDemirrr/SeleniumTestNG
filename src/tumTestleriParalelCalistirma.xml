@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="allTests" parallel="classes" thread-count="3">
+    <test name="parelel calistirma">
+        <packages>
+            <package name="tests.*">
+            </package>
+        </packages>
+    </test>
+</suite>
+
+<!--
+  TestNG'de .xml file ile paralel test yapmak istersek suite tag'indan sonra
+parallel tagi ile kac browser'da calistirmak istersek thread-count tagi'ni kullaniriz
+  Thread-count => ayni anda kac browserla calisacagimizi belirtir
+  -->
